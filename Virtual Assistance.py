@@ -15,13 +15,13 @@ voices = engine.getProperty('voices')
 # Setting a voice
 engine.setProperty('voice', voices[0].id)
 
-# Setting voice speed of L
+# Setting voice speed of assisstant
 engine.setProperty('rate',175)
 
 # Speak function 
-def speak(audio):
+def speak(audio): # audio - string
     engine.say(audio)
-    engine.runAndWait()
+    engine.runAndWait() #wait for speech to complete
     
 
 # Giving assisstance access to time
@@ -50,9 +50,9 @@ import speech_recognition as sr
 
 def take_command():
     r = sr.Recognizer()
-    with sr.Microphone() as source:
+    with sr.Microphone() as source: #opens the microphone and prepares it for recording
         print("assisstant is Listening...")
-        r.pause_threshold = 1
+        r.pause_threshold = 1 
         r.energy_threshold = 100
         audio = r.listen(source)
     
@@ -63,9 +63,7 @@ def take_command():
     
     
     except Exception as e:
-        print(e)
         print("Say that again...")
-        return "None"
 
     return query
 
@@ -103,7 +101,7 @@ if __name__== "__main__":
 
         
         
-        # allowing L to open websites 
+        # allowing assisstant to open websites 
         if "open youtube" in query:
             webbrowser.open("Youtube.com")
         
@@ -119,7 +117,7 @@ if __name__== "__main__":
         elif "play music" in query:
  
 
-            music_folder = "D:\\music"
+            music_folder = "C:\\Users\\Aniket\\Videos\\music"
             songs = os.listdir(music_folder)
             print(songs[0])
 
@@ -132,9 +130,9 @@ if __name__== "__main__":
             speak("The Time is " + str_time)
 
         elif "open code" in query:
-            os.startfile("C:\\Users\\Akanksha\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code\\Visual Studio Code.lnk")
+            os.startfile("C:\\Users\\Aniket\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code")
     
-        # Allowing L to take screenshot
+        # Allowing assisstant to take screenshot
         elif "take screenshot" in query:
             screen_shot = pg.screenshot()
             screen_shot.save('my_screenshot.png')
