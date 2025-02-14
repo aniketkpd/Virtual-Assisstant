@@ -1,0 +1,15 @@
+Search on wikipedia
+Open websites eg:
+    instagram
+    youtube
+    facebook
+    linkedin
+
+
+can play music from system
+can tell the time
+
+open any application
+    eg: VS Code
+
+Can take screenshot
